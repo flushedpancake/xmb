@@ -192,6 +192,7 @@ $lang['buddylistupdated'] = "Your address book has been updated, you will now be
 $lang['buddywarnaddself'] = "Adding yourself to your address book is not allowed.";
 $lang['bumpthreadmsg'] = "Thank you, the topic has been bumped. You are now being forwarded back to the thread list.";
 $lang['byte'] = "byte(s)";
+$lang['cannotdeletefirstpost'] = "You may not delete the starting post of a thread.";
 $lang['cannotmergesamethread'] = 'The target and destination TIDs were the same. It is impossible to merge a thread with itself.';
 $lang['cantsplit'] = "This topic cannot be split as there are no replies.";
 $lang['cantthreadprune'] = "This topic cannot be pruned as there are no replies.";
