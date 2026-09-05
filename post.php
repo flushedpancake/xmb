@@ -447,10 +447,10 @@ if ($validForSave) {
             
             elseif ($isFirstPost) {
                 if ($delete != 'yes') {
-                    $errors .= $core->softerror($lang['textnosubject']);
+                    $errors .= $core->softerror($lang['cannotdeletefirstpost']);
                 }
                 if (strlen($subjectinput) == 0) {
-                    $errors .= $core->softerror($lang['cannotdeletefirstpost']);
+                    $errors .= $core->softerror($lang['textnosubject']);
             }
 
             break;
