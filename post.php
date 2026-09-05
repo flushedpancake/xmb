@@ -441,16 +441,18 @@ if ($validForSave) {
             }
         case 'edit':
             $isFirstPost = $pid == $sql->getFirstPostInThread($tid);
-            if (strlen($subjectinput) == 0) {
-                if (strlen($messageinput) == 0) {
+            if (strlen($messageinput) == 0) {
                     $errors .= $core->softerror($lang['postnothing']);
-                } elseif ($delete != 'yes') {
-                    // Check if this is the first post in the thread.
-                    if ($isFirstPost) {
-                        $errors .= $core->softerror($lang['textnosubject']);
-                    }
-                }
             }
+            
+            elseif ($isFirstPost) {
+                if ($delete != 'yes') {
+                    $errors .= $core->softerror($lang['textnosubject']);
+                }
+                if (strlen($subjectinput) == 0) {
+                    $errors .= $core->softerror($lang['cannotdeletefirstpost']);
+            }
+
             break;
         case 'newthread':
             if (strlen($subjectinput) == 0) {
