@@ -436,6 +436,9 @@ if ($validForSave && $action !== 'edit' && X_GUEST && $settings->get('captcha_st
 if ($validForSave) {
     switch ($action) {
         case 'reply':
+            if (strlen($messageinput) == 0) {
+                $errors .= $core->softerror($lang['postnothing']);
+            }
         case 'edit':
             $isFirstPost = $pid == $sql->getFirstPostInThread($tid);
             if (strlen($subjectinput) == 0) {
@@ -452,6 +455,9 @@ if ($validForSave) {
         case 'newthread':
             if (strlen($subjectinput) == 0) {
                 $errors .= $core->softerror($lang['textnosubject']);
+            }
+            if (strlen($messageinput) == 0) {
+                $errors .= $core->softerror($lang['postnothing']);
             }
     }
 }
